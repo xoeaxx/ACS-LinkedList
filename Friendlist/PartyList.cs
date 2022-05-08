@@ -8,7 +8,7 @@ using Friendlist.LinkedList;
 
 namespace Friendlist
 {
-    class Program
+    class PartyList
     {
         static void Main(string[] args)
         {

@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{93A570E2-F9B0-46E8-AC5B-35A0C927BCB0}</ProjectGuid>
+    <ProjectGuid>{4C9E701E-49CF-4561-AF24-EB0D9263C5C4}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Friendlist</RootNamespace>
-    <AssemblyName>Friendlist</AssemblyName>
+    <RootNamespace>LinkedLists</RootNamespace>
+    <AssemblyName>LinkedLists</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,12 +43,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Friend.cs" />
-    <Compile Include="PartyList.cs" />
+    <Compile Include="LinkedList\LinkedList.cs" />
+    <Compile Include="LinkedList\LinkedListNode.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Friendlist\Friendlist.csproj">
+      <Project>{93a570e2-f9b0-46e8-ac5b-35a0c927bcb0}</Project>
+      <Name>Friendlist</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
