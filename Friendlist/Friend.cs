@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Friendlist
 {
-    class Friend
+    public class Friend
     {
         private string name;
         private bool inviteStatus;

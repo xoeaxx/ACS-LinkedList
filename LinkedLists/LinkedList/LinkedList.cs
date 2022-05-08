@@ -17,7 +17,7 @@ namespace Friendlist.LinkedList
             count = 0;
         }
 
-        public void AddNodeToFront(int data)
+        public void AddNodeToFront(Friend data)
         {
             LinkedListNode node = new LinkedListNode(data);
             node.next = head;
@@ -30,14 +30,16 @@ namespace Friendlist.LinkedList
             LinkedListNode runner = head;
             while (runner != null)
             {
-                Console.WriteLine(runner.data);
+                Console.WriteLine(runner.data.Name);
                 runner = runner.next;
             }
         }
 
         public void RemoveFromFront()
         {
-
+            LinkedListNode tempNode = null;
+            tempNode = head.next;
+            head = tempNode;
         }
 
     }

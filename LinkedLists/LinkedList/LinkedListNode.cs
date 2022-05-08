@@ -8,12 +8,12 @@ namespace Friendlist.LinkedList
 {
     class LinkedListNode
     {
-        public int data;
+        public Friend data;
         public LinkedListNode next;
 
-        public LinkedListNode(int x)
+        public LinkedListNode(Friend data)
         {
-            data = x;
+            this.data = data;
             next = null;
         }
     }
