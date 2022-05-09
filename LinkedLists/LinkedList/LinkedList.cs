@@ -35,6 +35,42 @@ namespace Friendlist.LinkedList
             }
         }
 
+        public void PrintInvStatus()
+        {
+            LinkedListNode runner = head;
+            while (runner != null)
+            {
+                Console.WriteLine(runner.data.InviteStatus);
+                runner = runner.next;
+            }
+        }
+        
+        public void PrintInvAccepted()
+        {
+            LinkedListNode runner = head;
+            while (runner != null)
+            {
+                if (runner.data.InviteStatus)
+                {
+                    Console.WriteLine(runner.data.Name);
+                    runner = runner.next;
+                }
+            }
+        }
+        
+        public void PrintInvDeclined()
+        {
+            LinkedListNode runner = head;
+            while (runner != null)
+            {
+                if (!runner.data.InviteStatus)
+                {
+                    Console.WriteLine(runner.data.Name);
+                    runner = runner.next;
+                }
+            }
+        }
+
         public void RemoveFromFront()
         {
             LinkedListNode tempNode = null;
