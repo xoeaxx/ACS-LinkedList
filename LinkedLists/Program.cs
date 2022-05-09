@@ -13,14 +13,27 @@ namespace LinkedLists
         static void Main(string[] args)
         {
             LinkedList linkedList = new LinkedList();
+
             linkedList.AddNodeToFront(new Friend("Liam", true));
             linkedList.AddNodeToFront(new Friend("Callum", false));
             linkedList.AddNodeToFront(new Friend("Mack", true));
             linkedList.AddNodeToFront(new Friend("Jacob", false));
+
+            Console.WriteLine("Print list:");
             linkedList.PrintList();
-            Console.WriteLine("\n");
+
+            Console.WriteLine("\nRemove one + print list:");
             linkedList.RemoveFromFront();
             linkedList.PrintList();
+
+            Console.WriteLine("\nPrint accepted:");
+            linkedList.PrintInvAccepted();
+
+            Console.WriteLine("\nPrint declined:");
+            linkedList.PrintInvDeclined();
+
+            Console.WriteLine("\nFind invite status (Callum):");
+            linkedList.FindInvStatus("Callum");
 
             Console.ReadKey();
         }

@@ -35,13 +35,17 @@ namespace Friendlist.LinkedList
             }
         }
 
-        public void PrintInvStatus()
+        public void FindInvStatus(string name)
         {
             LinkedListNode runner = head;
             while (runner != null)
             {
-                Console.WriteLine(runner.data.InviteStatus);
-                runner = runner.next;
+                if(runner.data.Name == name)
+                {
+                    Console.WriteLine(runner.data.InviteStatus);
+                    return;
+                }
+                    runner = runner.next;
             }
         }
         
@@ -53,8 +57,8 @@ namespace Friendlist.LinkedList
                 if (runner.data.InviteStatus)
                 {
                     Console.WriteLine(runner.data.Name);
-                    runner = runner.next;
                 }
+                    runner = runner.next;
             }
         }
         
@@ -66,8 +70,8 @@ namespace Friendlist.LinkedList
                 if (!runner.data.InviteStatus)
                 {
                     Console.WriteLine(runner.data.Name);
-                    runner = runner.next;
                 }
+                    runner = runner.next;
             }
         }
 
