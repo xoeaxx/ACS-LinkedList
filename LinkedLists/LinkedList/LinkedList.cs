@@ -75,6 +75,11 @@ namespace Friendlist.LinkedList
             }
         }
 
+        public void PrintLength()
+        {
+            Console.WriteLine(count);
+        }
+
         public void RemoveFromFront()
         {
             LinkedListNode tempNode = null;

@@ -35,6 +35,11 @@ namespace LinkedLists
             Console.WriteLine("\nFind invite status (Callum):");
             linkedList.FindInvStatus("Callum");
 
+            Console.WriteLine("\nPrint length:");
+            linkedList.PrintLength();
+
+
+
             Console.ReadKey();
         }
     }
