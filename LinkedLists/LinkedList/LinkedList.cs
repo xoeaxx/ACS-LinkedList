@@ -9,19 +9,19 @@ namespace Friendlist.LinkedList
     class LinkedList
     {
         int count;
-        LinkedListNode head;
+        LinkedListNode first;
 
         public LinkedList()
         {
-            head = null;
+            first = null;
             count = 0;
         }
 
         public void AddNodeToFront(Friend data)
         {
             LinkedListNode node = new LinkedListNode(data);
-            node.next = head;
-            head = node;
+            node.next = first;
+            first = node;
             count++;
         }
 
@@ -29,15 +29,15 @@ namespace Friendlist.LinkedList
         {
             for (int i = 0; i < count; i++)
             {                
-                LinkedListNode runner = head;
+                LinkedListNode runner = first;
                 LinkedListNode node = null;
                 while (runner != null)
                 {
-                    if (head.next.data.Priority > head.data.Priority)
+                    if (first.next.data.Priority > first.data.Priority)
                     {
-                        LinkedListNode temp = head;
-                        head = head.next;
-                        head.next = head;
+                        LinkedListNode temp = first;
+                        first = first.next;
+                        first.next = first;
                     }
                     runner = runner.next;
 
@@ -48,7 +48,7 @@ namespace Friendlist.LinkedList
 
         public void FindInvStatus(string name)
         {
-            LinkedListNode runner = head;
+            LinkedListNode runner = first;
             while (runner != null)
             {
                 if(runner.data.Name == name)
@@ -62,7 +62,7 @@ namespace Friendlist.LinkedList
         
         public void PrintInvAccepted()
         {
-            LinkedListNode runner = head;
+            LinkedListNode runner = first;
             while (runner != null)
             {
                 if (runner.data.InviteStatus)
@@ -75,7 +75,7 @@ namespace Friendlist.LinkedList
         
         public void PrintInvDeclined()
         {
-            LinkedListNode runner = head;
+            LinkedListNode runner = first;
             while (runner != null)
             {
                 if (!runner.data.InviteStatus)
@@ -94,15 +94,21 @@ namespace Friendlist.LinkedList
         public void RemoveFromFront()
         {
             LinkedListNode tempNode = null;
-            tempNode = head.next;
-            head = tempNode;
+            tempNode = first.next;
+            first = tempNode;
         }
 
         public void Remove(string name) // this works but i dont understand why
         {
             LinkedListNode previous = null;
-            for(var node = head; node != null; node = node.next)
+            for(var node = first; node != null; node = node.next)
             {
+                if(node.data.Name == first.data.Name)
+                {
+                    RemoveFromFront();
+                    return;
+                }
+
                 if (node.data.Name == name)
                 {
                     previous.next = node.next;
@@ -114,7 +120,7 @@ namespace Friendlist.LinkedList
         }
         public void PrintList()
         {
-            LinkedListNode runner = head;
+            LinkedListNode runner = first;
             while (runner != null)
             {
                 Console.WriteLine(runner.data.Name);
