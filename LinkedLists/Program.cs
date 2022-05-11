@@ -26,6 +26,9 @@ namespace LinkedLists
             linkedList.RemoveFromFront();
             linkedList.PrintList();
 
+            Console.WriteLine("\nAdded Jacob back.");
+            linkedList.AddNodeToFront(new Friend("Jacob", false, 3));
+
             Console.WriteLine("\nPrint accepted:");
             linkedList.PrintInvAccepted();
 
@@ -38,7 +41,11 @@ namespace LinkedLists
             Console.WriteLine("\nPrint length:");
             linkedList.PrintLength();
 
-            Console.WriteLine("In order of priority:");
+            Console.WriteLine("\nRemove specified (Callum):");
+            linkedList.Remove("Callum");
+            linkedList.PrintList();
+
+            Console.WriteLine("\nIn order of priority:");
             linkedList.Sort();
             linkedList.PrintList();
 

@@ -45,15 +45,6 @@ namespace Friendlist.LinkedList
             }
         }
 
-        public void PrintList()
-        {
-            LinkedListNode runner = head;
-            while (runner != null)
-            {
-                Console.WriteLine(runner.data.Name);
-                runner = runner.next;
-            }
-        }
 
         public void FindInvStatus(string name)
         {
@@ -107,16 +98,27 @@ namespace Friendlist.LinkedList
             head = tempNode;
         }
 
-        public void Remove(string name)
+        public void Remove(string name) // this works but i dont understand why
+        {
+            LinkedListNode previous = null;
+            for(var node = head; node != null; node = node.next)
+            {
+                if (node.data.Name == name)
+                {
+                    previous.next = node.next;
+                    return;
+                }
+                previous = node;
+            }
+
+        }
+        public void PrintList()
         {
             LinkedListNode runner = head;
-            LinkedListNode previous = null;
-            while(runner != null)
+            while (runner != null)
             {
-                if(runner.data.Name == name)
-                {
-
-                }
+                Console.WriteLine(runner.data.Name);
+                runner = runner.next;
             }
         }
 
