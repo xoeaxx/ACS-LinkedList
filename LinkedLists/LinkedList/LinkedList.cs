@@ -25,6 +25,26 @@ namespace Friendlist.LinkedList
             count++;
         }
 
+        public void Sort()
+        {
+            for (int i = 0; i < count; i++)
+            {                
+                LinkedListNode runner = head;
+                LinkedListNode node = null;
+                while (runner != null)
+                {
+                    if (head.next.data.Priority > head.data.Priority)
+                    {
+                        LinkedListNode temp = head;
+                        head = head.next;
+                        head.next = head;
+                    }
+                    runner = runner.next;
+
+                }
+            }
+        }
+
         public void PrintList()
         {
             LinkedListNode runner = head;
@@ -85,6 +105,19 @@ namespace Friendlist.LinkedList
             LinkedListNode tempNode = null;
             tempNode = head.next;
             head = tempNode;
+        }
+
+        public void Remove(string name)
+        {
+            LinkedListNode runner = head;
+            LinkedListNode previous = null;
+            while(runner != null)
+            {
+                if(runner.data.Name == name)
+                {
+
+                }
+            }
         }
 
     }

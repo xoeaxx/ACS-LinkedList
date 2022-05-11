@@ -25,7 +25,7 @@ namespace Friendlist
 
         private static void RemoveFriend(List<Friend> partyList)
         {
-            Friend removeFriend = new Friend(null, false);
+            Friend removeFriend = new Friend(null, false, -1);
             string name;
             Console.WriteLine("Select who to remove: ");
             name = Console.ReadLine();
@@ -103,9 +103,9 @@ namespace Friendlist
                     Console.Write("Have they accepted?(y/n) ");
                     acceptedInv = Console.ReadLine();
                     if (acceptedInv == "y")
-                        friend = new Friend(inputName, true);
+                        friend = new Friend(inputName, true, -1);
                     else
-                        friend = new Friend(inputName, false);
+                        friend = new Friend(inputName, false, -1);
                     partyList.Add(friend);
                 }
             }

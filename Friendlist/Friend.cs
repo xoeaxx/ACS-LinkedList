@@ -27,10 +27,11 @@ namespace Friendlist
             get { return priority; }
             set { priority = value; }
         }
-        public Friend(string name, bool inviteStatus)
+        public Friend(string name, bool inviteStatus, int priority)
         {
             this.name = name;
             this.inviteStatus = inviteStatus;
+            this.priority = priority;
         }
     }
 }

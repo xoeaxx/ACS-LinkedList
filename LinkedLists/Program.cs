@@ -14,10 +14,10 @@ namespace LinkedLists
         {
             LinkedList linkedList = new LinkedList();
 
-            linkedList.AddNodeToFront(new Friend("Liam", true));
-            linkedList.AddNodeToFront(new Friend("Callum", false));
-            linkedList.AddNodeToFront(new Friend("Mack", true));
-            linkedList.AddNodeToFront(new Friend("Jacob", false));
+            linkedList.AddNodeToFront(new Friend("Liam", true, 1));
+            linkedList.AddNodeToFront(new Friend("Callum", false, 4));
+            linkedList.AddNodeToFront(new Friend("Mack", true, 2));
+            linkedList.AddNodeToFront(new Friend("Jacob", false, 3));
 
             Console.WriteLine("Print list:");
             linkedList.PrintList();
@@ -38,7 +38,9 @@ namespace LinkedLists
             Console.WriteLine("\nPrint length:");
             linkedList.PrintLength();
 
-
+            Console.WriteLine("In order of priority:");
+            linkedList.Sort();
+            linkedList.PrintList();
 
             Console.ReadKey();
         }
